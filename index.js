@@ -30,6 +30,7 @@ app.use('/clients', clientRoutes)
 app.use('/products', productRoutes)
 app.use('/user', userRoutes)
 
-mongoose.connect(process.env.MONGODB_URL,{ useNewUrlParser: true, useUnifiedTopology: true}).then((res)=>{app.listen(process.env.PORT,()=>{console.log('server calisti...')})})
+const port=process.env.PORT || 5000
+mongoose.connect(process.env.MONGODB_URL,{ useNewUrlParser: true, useUnifiedTopology: true}).then((res)=>{app.listen(port,()=>{console.log('server calisti...')})})
 
 mongoose.set('strictQuery', false);
