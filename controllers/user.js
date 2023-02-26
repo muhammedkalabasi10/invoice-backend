@@ -194,7 +194,7 @@ export const logout = (req, res) => {
 };
 
 export const forgotPassword = async (req, res) => {
-  const { email } = req.body;
+  const { email } = await req.body;
   const errors = validationResult(req);
   if (!errors.isEmpty()) return res.status(422).json({ message: errors.errors[0].msg });
   try {
